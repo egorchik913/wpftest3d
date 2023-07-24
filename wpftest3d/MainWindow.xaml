@@ -30,5 +30,13 @@
                 </GeometryModel3D>
             </ModelUIElement3D>
         </Helix:HelixViewport3D>
+        <TextBlock 
+            x:Name="NameNGDY"
+            Text="" Width="200"
+            Height="30" VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            TextAlignment="Center"
+            FontWeight="Bold"
+            FontSize="18"></TextBlock>
     </Grid>
 </Window>
