@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -90,11 +91,12 @@ namespace wpftest3d
             ModelUIElement3D UImodel1Dark = new ModelUIElement3D();
             UImodel1Dark.Model = model1Dark;
             UImodel1Dark.Transform = new TranslateTransform3D(0, 0.01, 0);
+            string s1 = "НГДУ АльметНефть";
 
             UImodel1.MouseEnter += (sender, e) =>
             {
                 UI_MouseEnter(UImodel1, UImodel1Dark);
-                NameNGDY.Text = "НГДУ АльметНефть";
+                NameNGDY.Text += s1;
             };
 
             UImodel1Dark.MouseLeave += (sender, e) =>
@@ -112,10 +114,6 @@ namespace wpftest3d
                 {
                     case true:
                         isFunctionEnabled[0] = !isFunctionEnabled[0];
-                        //if (NameNGDY.Text != null)
-                        //{
-                        //    NameNGDY.Text += ", НГДУ АльметНефть";
-                        //}
                         break;
                     case false:
                         isFunctionEnabled[0] = !isFunctionEnabled[0];
@@ -133,13 +131,14 @@ namespace wpftest3d
             ModelUIElement3D UImodel2Dark = new ModelUIElement3D();
             UImodel2Dark.Model = model2Dark;
             UImodel2Dark.Transform = new TranslateTransform3D(0, 0.01, 0);
+            string s2 = "НГДУ АзнакаевНефть";
 
             UImodel2.MouseEnter += (sender, e) =>
             {
                 UI_MouseEnter(UImodel2, UImodel2Dark);
                 viewport.Children.Add(UIpin);
                 UIpin.Transform.BeginAnimation(TranslateTransform3D.OffsetYProperty, animation);
-                NameNGDY.Text = "НГДУ АзнакаевНефть";
+                NameNGDY.Text += s2;
             };
 
             UImodel2Dark.MouseLeave += (sender, e) =>
@@ -175,12 +174,13 @@ namespace wpftest3d
             ModelUIElement3D UImodel3Dark = new ModelUIElement3D();
             UImodel3Dark.Model = model3Dark;
             UImodel3Dark.Transform = new TranslateTransform3D(0, 0.01, 0);
+            string s3 = "НГДУ БавлыНефть";
 
             UImodel3.MouseEnter += (sender, e) =>
             {
                 UI_MouseEnter(UImodel3, UImodel3Dark);
                 UIpin.Transform.BeginAnimation(TranslateTransform3D.OffsetYProperty, animation);
-                NameNGDY.Text = "НГДУ БавлыНефть";
+                NameNGDY.Text += s3;
             };
 
             UImodel3Dark.MouseLeave += (sender, e) =>
@@ -188,7 +188,7 @@ namespace wpftest3d
                 if (isFunctionEnabled[2] == true)
                 {
                     UI_MouseLeave(UImodel3, UImodel3Dark);
-                    NameNGDY.Text = null;
+                    NameNGDY.Text = s
                 }
             };
 
